@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    font-style: Helvetica;
+    background: url(lux.jpg);
+    background-repeat: no-repeat;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.navbar {
+    background: #B8860B;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.logo {
+    font-size: 30pt;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.tombol {
+    display: none;
+    color: #ffbf78;
+    font-size: 14pt;
+}
+
+.tombol:hover {
+    cursor: pointer;
+}
+
+.navbar .navbar-nav a {
+    color: #ffffff;
+    display: flexbox;
+    font-size: 1.1rem;
+    margin: 0 1rem;
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0px;
+    height: 390px;
+}
+
+.text-content {
+    width: 80%;
+    text-align: center;
+    padding: 0px;
+    color: #000000;
+    background-color: rgba(255, 255, 255, 0.397);
+    box-shadow: 5px 5px 15px rgba(247, 225, 33, 0.719);
+    border-radius: 40px;
+}
+
+.text-content h1 {
+    font-size: 50px;
+    margin-bottom: 5px;
+}
+
+.text-content p {
+    font-size: 25px;
+    line-height: 1.5;
+}
