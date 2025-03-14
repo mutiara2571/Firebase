@@ -1,59 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pearluxe Cafe</title>
     <link rel="stylesheet" href="Mn.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <nav class="navbar">
-        <a href="Cafe" class="logo"> Pearluxe Cafe </a>
-        <div class="navbar-nav">
-            <a href="index.html"><img src="restaurant.png " />Home</a>
-            <a href="menu.html"><img src="restaurant (1).png " /> Menu</a>
-            <a href="services.html"> <img src="bell.png " /> Services</a>
-            <a href="about.html"><img src="user.png " /> About Us</a>
-            <a href="contact.html"><img src="customer-care.png " /> Contact</a>
-        </div>
-        <div class="tombol">&#9776;</div>
+      <a href="Cafe" class="logo"> Pearluxe Cafe </a>
+      <div class="navbar-nav">
+        <a href="index.html"><img src="restaurant.png " />Home</a>
+        <a href="menu.html"><img src="restaurant (1).png " /> Menu</a>
+        <a href="services.html"> <img src="bell.png " /> Services</a>
+        <a href="about.html"><img src="user.png " /> About Us</a>
+        <a href="contact.html"><img src="customer-care.png " /> Contact</a>
+      </div>
+      <div class="tombol">&#9776;</div>
     </nav>
+    <div class="text-content">
+      <h1>🍽️ Selamat Datang di Pearluxe Cafe! 🍽️</h1>
+      <p>
+        “Biar makanan yang bicara, jangan cuma kamu yang berkata-kata. Rasakan
+        kenikmatannya dalam setiap suapan!” ✨
+      </p>
+    </div>
     <div class="container">
-        <div class="text-content">
-            <h1>🍽️ Selamat Datang di Pearluxe Cafe! 🍽️</h1>
-            <p>
-                “Biar makanan yang bicara, jangan cuma kamu yang berkata-kata. Rasakan kenikmatannya dalam setiap suapan!” ✨
-            </p>
-        </div>
+      <div id="data" class="container"></div>
     </div>
-    <div class="row">
-        <div class="menu-card">
-            <img src="ikan.jpg" alt="Ikan" />
-            <h3>🐟 Gurihnya Ikan Bakar</h3>
-            <p>
-                Rasakan kelezatan ikan segar yang dipanggang dengan bumbu rahasia kami! 🔥
-            </p>
-            <p class="price">💰 Rp. 45.000</p>
-        </div>
-        <div class="menu-card">
-            <img src="ayam.jpg" alt="Ayam Saus" />
-            <h3>🍗 Ayam Saus Spesial</h3>
-            <p>
-                Daging ayam yang empuk dengan saus istimewa yang menggoda selera! 🤤
-            </p>
-            <p class="price">💰 Rp. 40.000</p>
-        </div>
-        <div class="menu-card">
-            <img src="udang.jpg" alt="Udang Asam Manis" />
-            <h3>🦐 Udang Asam Manis</h3>
-            <p>
-                Kombinasi sempurna antara rasa manis dan asam yang menyegarkan! 🍋
-            </p>
-            <p class="price">💰 Rp. 50.000</p>
-        </div>
-    </div>
-</body>
+    <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore-compat.js"></script>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
 
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyBEXECok_z79bsFtHDYmOFGZt_bNsJTI3M",
+        authDomain: "pearluxe-cafe.firebaseapp.com",
+        projectId: "pearluxe-cafe",
+        storageBucket: "pearluxe-cafe.firebasestorage.app",
+        messagingSenderId: "1076306005285",
+        appId: "1:1076306005285:web:2f59d5f2b4bb0ce65c9ecc",
+        measurementId: "G-XSHERVD1TL",
+      };
+
+      /* Initialize Firebase */
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+      /* Fetch data dari Firestore database */
+      async function fetchData() {
+        try {
+          const productsCol =
+            db.collection(
+              "products"
+            ); /** Replace 'products' sesuai dengan nama collection anda */
+          const querySnapshot = await productsCol.get();
+          const data = querySnapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+          }));
+          return data;
+        } catch (error) {
+          console.error("Error fetching data:", error);
+          return [];
+        }
+      }
+      fetchData().then((data) => {
+        console.log(data);
+        const dataProduct = document.getElementById("data");
+        dataProduct.innerHTML = data
+          .map(
+            (item) =>
+              `<div class="card">
+                    <img src="${item.image || "default.jpg"}" alt="${
+                item.name || "Produk"
+              }">
+                    <h3>${item.name || "Produk Tidak Diketahui"}</h3>
+                    <p class="price">Rp ${
+                      item.price ? item.price.toLocaleString() : "0"
+                    }</p>
+                </div>`
+          )
+          .join("");
+      });
+    </script>
+  </body>
 </html>
