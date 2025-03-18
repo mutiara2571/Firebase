@@ -49,11 +49,11 @@ body {
 }
 
 .text-content {
-  width: 30%;
+  width: 40%;
   text-align: center;
-  padding: 20px;
+  padding: 0px;
   color: #7e4519;
-  background-color: rgba(255, 248, 220, 0.8);
+  background-color: #ffffff;
   border-radius: 40px;
 }
 
@@ -71,13 +71,13 @@ body {
   margin: 0 0.5rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1366px) {
   html {
     font-size: 100%;
   }
 }
 
-@media (max-width: 756px) {
+@media (max-width: 768px) {
   html {
     font-size: 62.5%;
   }
@@ -91,7 +91,6 @@ body {
     top: 100%;
     right: -100%;
     background-color: rgba(184, 135, 11, 0.5);
-    border-radius: 1rem; /*kotak oval*/
     padding: 0; /*letak menu*/
     width: 11rem;
     height: 100vh;
@@ -104,7 +103,7 @@ body {
 
   /* 25 warna animasi menu kanan setelah di klik*/
   .navbar-nav a {
-    color: #ffffff;
+    color: #000000;
     display: block; /*supaya menu turun kebawah*/
     margin: 1.1rem;
     padding: 0.3rem;
@@ -128,9 +127,9 @@ body {
 }
 
 .services-card {
-  background: rgba(240, 217, 10, 0.384);
+  background: #ffe600;
   padding: 12px;
-  border-radius: 50px;
+  border-radius: 45px;
   text-align: center;
   width: 180px;
   transition: 0.3s;
