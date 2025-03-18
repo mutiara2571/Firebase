@@ -11,4 +11,4 @@ document.addEventListener("click", function (e) {
   if (!Accessories.contains(e.target) && !navbarNav.contains(e.target)) {
     navbarNav.classList.remove("active");
   }
-});
+}); 
