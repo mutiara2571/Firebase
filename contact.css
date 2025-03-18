@@ -8,7 +8,9 @@ body {
   background-position: center;
   height: 100vh;
 }
-
+#Accessories {
+  display: none;
+}
 .navbar {
   background: #b8860b;
   display: flex;
@@ -26,16 +28,6 @@ body {
   font-weight: bold;
   text-decoration: none;
   color: #ffffff;
-}
-
-.tombol {
-  display: none;
-  color: #ffbf78;
-  font-size: 14pt;
-}
-
-.tombol:hover {
-  cursor: pointer;
 }
 
 .navbar .navbar-nav a {
@@ -102,6 +94,57 @@ textarea {
 
 .contact-info h2 {
   margin-bottom: 20px;
+}
+.navbar-extra a {
+  color: #ffffff;
+  margin: 0 0.5rem;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 100%;
+  }
+}
+
+@media (max-width: 756px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #Accessories {
+    display: inline-block;
+  }
+
+  .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: rgba(184, 135, 11, 0.5);
+    border-radius: 1rem; /*kotak oval*/
+    padding: 0; /*letak menu*/
+    width: 11rem;
+    height: 100vh;
+    transition: 0.5s;
+  }
+  /*22 untuk mengaktifkan menu pakai java script next index */
+  .navbar-nav.active {
+    right: 0;
+  }
+
+  /* 25 warna animasi menu kanan setelah di klik*/
+  .navbar-nav a {
+    color: #ffffff;
+    display: block; /*supaya menu turun kebawah*/
+    margin: 1.1rem;
+    padding: 0.3rem;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 350px) {
+  html {
+    font-size: 45%;
+  }
 }
 
 footer {

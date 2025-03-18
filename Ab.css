@@ -1,108 +1,151 @@
 body {
-    margin: 0;
-    font-style: Helvetica;
-    background: url(lux.jpg);
-    background-repeat: no-repeat;
-    padding: 0;
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
+  margin: 0;
+  font-style: Helvetica;
+  background: url(lux.jpg);
+  background-repeat: no-repeat;
+  padding: 0;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
 }
-
+#Accessories {
+  display: none;
+}
 .navbar {
-    background: #b8860b;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 20px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+  background: #b8860b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .logo {
-    font-size: 30pt;
-    font-weight: bold;
-    text-decoration: none;
-    color: #ffffff;
-}
-
-.tombol {
-    display: none;
-    color: #ffbf78;
-    font-size: 14pt;
-}
-
-.tombol:hover {
-    cursor: pointer;
+  font-size: 30pt;
+  font-weight: bold;
+  text-decoration: none;
+  color: #ffffff;
 }
 
 .navbar .navbar-nav a {
-    color: #ffffff;
-    display: flexbox;
-    font-size: 1.1rem;
-    margin: 0 1rem;
-    text-decoration: none;
+  color: #ffffff;
+  display: flexbox;
+  font-size: 1.1rem;
+  margin: 0 1rem;
+  text-decoration: none;
 }
 
 .container {
-    display: flex;
-    align-items: flex-end;
-    justify-content: left;
-    padding: 20px;
-    height: 400px;
-    right: 50px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: left;
+  padding: 20px;
+  height: 400px;
+  right: 50px;
 }
 
 .text-content {
-    width: 35%;
-    text-align: center;
-    padding: 50px;
-    color: #5a2e0d;
-    background-color: rgba(255, 255, 255, 0.404);
-    border-radius: 40px;
+  width: 30%;
+  text-align: center;
+  padding: 50px;
+  color: #5a2e0d;
+  background-color: rgba(255, 255, 255, 0.404);
+  border-radius: 40px;
 }
 
 .text-content h1 {
-    font-size: 20px;
-    margin-bottom: 10px;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
 .text-content p {
-    font-size: 16px;
-    line-height: 1.5;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.navbar-extra a {
+  color: #ffffff;
+  margin: 0 0.5rem;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 100%;
+  }
+}
+
+@media (max-width: 756px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #Accessories {
+    display: inline-block;
+  }
+
+  .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: rgba(184, 135, 11, 0.5);
+    border-radius: 1rem; /*kotak oval*/
+    padding: 0; /*letak menu*/
+    width: 11rem;
+    height: 100vh;
+    transition: 0.5s;
+  }
+  /*22 untuk mengaktifkan menu pakai java script next index */
+  .navbar-nav.active {
+    right: 0;
+  }
+
+  /* 25 warna animasi menu kanan setelah di klik*/
+  .navbar-nav a {
+    color: #ffffff;
+    display: block; /*supaya menu turun kebawah*/
+    margin: 1.1rem;
+    padding: 0.3rem;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 350px) {
+  html {
+    font-size: 45%;
+  }
 }
 
 .row {
-    display: flexbox;
-    justify-content: right;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 0px;
-    position: relative;
-    top: -23rem;
-    left: 45rem;
+  display: flexbox;
+  justify-content: right;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0px;
+  position: relative;
+  top: -23rem;
+  left: 45rem;
 }
 
 .about-card {
-    background: rgba(255, 255, 255, 0.384);
-    padding: 20px;
-    border-radius: 0px;
-    text-align: center;
-    width: 180px;
-    transition: 0.3s;
+  background: rgba(255, 255, 255, 0.384);
+  padding: 20px;
+  border-radius: 0px;
+  text-align: center;
+  width: 180px;
+  transition: 0.3s;
 }
 
 .about-card:hover {
-    transform: scale(1.4);
+  transform: scale(1.4);
 }
 
 .about-card img {
-    width: 70px;
-    height: 70px;
-    border-radius: 90%;
-    object-fit: cover;
-    box-shadow: 5px 5px 15px rgb(255, 255, 255);
-    margin-bottom: 0px;
+  width: 70px;
+  height: 70px;
+  border-radius: 90%;
+  object-fit: cover;
+  box-shadow: 5px 5px 15px rgb(255, 255, 255);
+  margin-bottom: 0px;
 }

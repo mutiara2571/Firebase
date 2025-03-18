@@ -8,7 +8,9 @@ body {
   background-position: center;
   height: 100vh;
 }
-
+#Accessories {
+  display: none;
+}
 .navbar {
   background: #b8860b;
   display: flex;
@@ -42,11 +44,11 @@ body {
   align-items: flex-end;
   justify-content: center;
   padding: 0px;
-  height: 390px;
+  height: 500px;
 }
 
 .text-content {
-  width: 80%;
+  width: 58%;
   text-align: center;
   padding: 0px;
   color: #000000;
@@ -56,7 +58,7 @@ body {
 }
 
 .text-content h1 {
-  font-size: 35px;
+  font-size: 25px;
   margin-bottom: 5px;
 }
 
@@ -69,9 +71,6 @@ body {
   margin: 0 0.5rem;
 }
 
-#Accessories {
-  display: none;
-}
 @media (max-width: 768px) {
   html {
     font-size: 100%;
@@ -83,38 +82,39 @@ body {
   html {
     font-size: 62.5%;
   }
+
+  #Accessories {
+    display: inline-block;
+  }
+
+  .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: rgba(184, 135, 11, 0.5);
+    border-radius: 1rem; /*kotak oval*/
+    padding: 0; /*letak menu*/
+    width: 11rem;
+    height: 100vh;
+    transition: 0.5s;
+  }
+  /*22 untuk mengaktifkan menu pakai java script next index */
+  .navbar-nav.active {
+    right: 0;
+  }
+
+  /* 25 warna animasi menu kanan setelah di klik*/
+  .navbar-nav a {
+    color: #ffffff;
+    display: block; /*supaya menu turun kebawah*/
+    margin: 1.1rem;
+    padding: 0.3rem;
+    font-size: 1.8rem;
+  }
 }
-/*19 mobile*/
+
 @media (max-width: 350px) {
   html {
     font-size: 45%;
   }
-}
-/*20 memunculkan menu*/
-#Accessories {
-  display: inline-block;
-}
-/*21 border menu kanan*/
-.navbar-nav {
-  position: absolute;
-  top: 100%;
-  right: -100%;
-  background-color: rgba(184, 135, 11, 0.5);
-  border-radius: 1rem; /*kotak oval*/
-  padding: 0; /*letak menu*/
-  width: 11rem;
-  height: 100vh;
-  transition: 0.5s;
-}
-/*22 untuk mengaktifkan menu pakai java script next index */
-.navbar-nav.active {
-  right: 0;
-}
-/* 25 warna animasi menu kanan setelah di klik*/
-.navbar-nav a {
-  color: #ffffff;
-  display: block; /*supaya menu turun kebawah*/
-  margin: 1.1rem;
-  padding: 0.3rem;
-  font-size: 1.7rem;
 }

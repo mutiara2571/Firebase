@@ -9,6 +9,9 @@ body {
   height: 100vh;
 }
 
+#Accessories {
+  display: none;
+}
 .navbar {
   background: #b8860b;
   display: flex;
@@ -29,16 +32,6 @@ body {
   color: #ffffff;
 }
 
-.tombol {
-  display: none;
-  color: #ffbf78;
-  font-size: 14pt;
-}
-
-.tombol:hover {
-  cursor: pointer;
-}
-
 .navbar .navbar-nav a {
   color: #ffffff;
   display: flexbox;
@@ -46,7 +39,6 @@ body {
   margin: 0 1rem;
   text-decoration: none;
 }
-
 .container {
   display: flex;
   align-items: flex;
@@ -63,12 +55,13 @@ body {
   width: 30%;
   text-align: center;
   padding: 20px;
-  color: #853e09;
-  background-color: rgba(255, 248, 220, 0.8);
+  color: #000000;
+  background-color: #e2a807;
   border-radius: 40px;
   position: relative;
-  top: 4rem;
+  top: 5rem;
   left: 30rem;
+  right: 25rem;
 }
 
 .text-content h1 {
@@ -80,16 +73,70 @@ body {
   font-size: 16px;
   line-height: 1.5;
 }
+.navbar-extra a {
+  color: #ffffff;
+  margin: 0 0.5rem;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 100%;
+  }
+}
+
+/* 18 tablet */
+@media (max-width: 756px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #Accessories {
+    display: inline-block;
+  }
+  #Accessories {
+    display: inline-block;
+  }
+  .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: rgba(184, 135, 11, 0.5);
+    border-radius: 1rem; /*kotak oval*/
+    padding: 0; /*letak menu*/
+    width: 11rem;
+    height: 100vh;
+    transition: 0.5s;
+  }
+  /*22 untuk mengaktifkan menu pakai java script next index */
+  .navbar-nav.active {
+    right: 0;
+  }
+
+  /* 25 warna animasi menu kanan setelah di klik*/
+  .navbar-nav a {
+    color: #ffffff;
+    display: block; /*supaya menu turun kebawah*/
+    margin: 1.1rem;
+    padding: 0.3rem;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 350px) {
+  html {
+    font-size: 45%;
+  }
+}
 
 .card {
-  width: 210px;
-  border: 1px solid #ddd;
+  width: 180px;
+  border: 15px solid #f5af00;
   border-radius: 8px;
   overflow: hidden;
   text-align: center;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
   padding: 10px;
-  background: #fff;
+  background: #ffffff;
 }
 
 .card img {
@@ -101,11 +148,10 @@ body {
 
 .card h3 {
   font-size: 18px;
-  margin: 10px 0;
 }
 
 .price {
   font-size: 16px;
-  color: #e44d26;
+  color: #000000;
   font-weight: bold;
 }
